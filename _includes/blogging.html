@@ -21,9 +21,9 @@
                             <span><i class="fa fa-tag"></i><a href="#">{{post.tag}}</a></span>
                         </div>
                         <div class="date">{{ post.date | date_to_string }}</div>
-                        <h1><a href="https://blog.pankajr.com/{{ post.url }}">{{post.title}}</a></h1>
+                        <h1><a href="https://blog.pankajr.com{{ post.url }}">{{post.title}}</a></h1>
                         <p>{{ post.content | strip_html | truncatewords:50 }}</p>
-                        <a href="https://blog.pankajr.com/{{ post.url }}" class="btn btn-primary btn-xs"><span>Read more</span><i class="ti-arrow-right"></i></a>
+                        <a href="https://blog.pankajr.com{{ post.url }}" class="btn btn-primary btn-xs"><span>Read more</span><i class="ti-arrow-right"></i></a>
                     </div>
                 </article>
 {% endfor %}
