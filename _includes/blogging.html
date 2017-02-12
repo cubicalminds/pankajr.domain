@@ -1,0 +1,35 @@
+<!-- Section - Latest Posts -->
+    <section id="posts" class="section bg-grey padding-v-60">
+
+        <!-- Content -->
+        <div class="container container-wide">
+
+            <h6 class="margin-b-50">Latest Posts</h6>
+            
+            <div class="row masonry">
+                <!-- Masonry Sizer -->
+                <div class="masonry-sizer col-lg-4 col-sm-6 col-xs-12"></div>    
+                <!-- Masonry Element / Post -->
+                {% for post in paginator.posts %}
+<article class="post post-item masonry-item col-lg-4 col-sm-6 col-xs-12">
+                    <div class="post-photo">
+                        <img src="https://blog.pankajr.com/assets/img/photos/{{post.title}}.jpg" alt="...">
+                    </div>
+                    <div class="post-content animated" data-animation="fadeInUp">
+                        <div class="meta">
+                            <span><i class="fa fa-user"></i><a href="#">{{post.author}}</a></span>
+                            <span><i class="fa fa-tag"></i><a href="#">{{post.tag}}</a></span>
+                        </div>
+                        <div class="date">{{ post.date | date_to_string }}</div>
+                        <h1><a href="https://blog.pankajr.com/{{ post.url }}">{{post.title}}</a></h1>
+                        <p>{{ post.content | strip_html | truncatewords:50 }}</p>
+                        <a href="https://blog.pankajr.com/{{ post.url }}" class="btn btn-primary btn-xs"><span>Read more</span><i class="ti-arrow-right"></i></a>
+                    </div>
+                </article>
+{% endfor %}
+            </div>  
+
+        </div>
+        
+    </section>
+    <!-- Section - Latest Posts / End -->
